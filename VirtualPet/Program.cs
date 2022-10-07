@@ -43,12 +43,9 @@ namespace VirtualPet
             boredomLevel += 2;
         }
 
-
-        static void Main(string[] args)
+        public void status()
         {
-
+            Console.WriteLine("\nHunger: " + hungerLevel + " Thirst: " + thirstLevel + " boredom: " + boredomLevel);
         }
-
-
     }
 }
