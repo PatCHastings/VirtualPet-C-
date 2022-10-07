@@ -25,15 +25,27 @@ namespace VirtualPet
 
         public void feed()
         {
-            hungerLevel = hungerLevel - 5;
+            hungerLevel = hungerLevel - 2;
+            if (hungerLevel < 0)
+            {
+                hungerLevel = 0;
+            }
         }
         public void water()
         {
-            thirstLevel = thirstLevel - 5;  
+            thirstLevel = thirstLevel - 2;
+            if (thirstLevel < 0)
+            {
+                thirstLevel = 0;
+            }
         }
         public void play()
         {
-            boredomLevel = boredomLevel - 5;
+            boredomLevel = boredomLevel - 2;
+            if (boredomLevel < 0)
+            {
+                boredomLevel = 0;
+            }
         }
 
         public void Tick()
