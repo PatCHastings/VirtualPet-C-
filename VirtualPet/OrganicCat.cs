@@ -16,5 +16,7 @@ namespace VirtualPet
             this.type = type;
             this.litterboxFilthLevel = litterboxFilthLevel;
         }
+        public String Type { get; set; }
+        public int LitterboxFilthLevel { get; set; }
     }
 }
