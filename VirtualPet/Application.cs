@@ -30,7 +30,7 @@ namespace VirtualPet
             while (gameOn == true)
             {       
                 Console.WriteLine("\nNow, what would you like to do with your pet " + petName + "?\n");
-                Console.WriteLine("1: Feed it\n2: give it water\n3: Play with it\n4: quit game");
+                Console.WriteLine("1: Feed it\n2: give it water\n3: Play with it\n4: new game\n5: quit");
                 int prompt = int.Parse(Console.ReadLine());            
             
                 if (prompt == 1)
@@ -56,11 +56,43 @@ namespace VirtualPet
                 }
                 else if (prompt == 4)
                 {
-                    Environment.Exit(0);
+                    Console.WriteLine("Are you sure? All unsaved progress will be lost..\n(enter y if yes, enter n if not)\n");
+                    String promptNewGame = Console.ReadLine();
+                    if (promptNewGame.Equals("y"))
+                    {
+                        gameLoop();
+                    }
+                    else if (promptNewGame.Equals("n"))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine("that is not what I asked..");
+                    }
+                    
+                }
+                else if (prompt == 5)
+                {
+                    Console.WriteLine("Are you sure? All unsaved progress will be lost..\n(enter y if yes, enter n if not)\n");
+                    String promptNewGame = Console.ReadLine();
+                    if (promptNewGame.Equals("y"))
+                    {
+                        Environment.Exit(0);
+                    }
+                    else if (promptNewGame.Equals("n"))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine("that is not what I asked..");
+                    }    
                 }
                 else
                 {
                     Console.WriteLine("I'm sorry, I didn't understand.. Please clarify your choice by selecting an option 1 through 4");
+                    continue;
                 }
             }
             
