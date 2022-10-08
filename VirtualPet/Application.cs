@@ -94,8 +94,7 @@ namespace VirtualPet
                     Console.WriteLine("I'm sorry, I didn't understand.. Please clarify your choice by selecting an option 1 through 4");
                     continue;
                 }
-            }
-            
+            }           
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace VirtualPet
 {
-    public class VirtualPet
+    public abstract class VirtualPet
     {
         protected String petName;
         protected int hungerLevel;
@@ -60,7 +60,8 @@ namespace VirtualPet
             Console.WriteLine("\nHunger: " + hungerLevel + " Thirst: " + thirstLevel + " boredom: " + boredomLevel);
             if (hungerLevel >= 10)
             {
-                Console.WriteLine(petName + " is about to starve! You better Feed it!");
+                Console.WriteLine(petName + " is about to starve! You better Feed it" +
+                    "!");
             }
             if (thirstLevel >= 10)
             {
