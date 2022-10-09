@@ -53,6 +53,13 @@ namespace VirtualPet
                 arrayPet.status();
             }
         }
+        public void tickPets()
+        {
+            foreach (VirtualPet arrayPet in shelterList)
+            {
+                arrayPet.Tick();
+            }
+        }
 
         
     }

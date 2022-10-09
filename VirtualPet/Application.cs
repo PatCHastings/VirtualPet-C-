@@ -123,7 +123,8 @@ namespace VirtualPet
                     Console.WriteLine("\nWould you like to add a Cat or a Dog?\n" +
                         "\n1: add Cat" +
                         "\n2: add Dog");
-                    if (prompt == 1)
+                    int promptNested = int.Parse(Console.ReadLine());
+                    if(promptNested==1)
                     {
                         Console.WriteLine("Enter your new cat's name:");
                         String typeName = Console.ReadLine();
@@ -134,7 +135,7 @@ namespace VirtualPet
 
 
                     }
-                    else if (prompt == 2)
+                    else if(promptNested==2)
                     {
                         Console.WriteLine("Enter your new dog's name:");
                         String typeName = Console.ReadLine();
@@ -151,17 +152,20 @@ namespace VirtualPet
                 {
                     petShelter.feedPets();
                     petShelter.showPetsStatus();
+                    petShelter.tickPets();
 
                 }
                 else if (prompt == 3)
                 {
                     petShelter.waterPets();
                     petShelter.showPetsStatus();
+                    petShelter.tickPets();
                 }
                 else if (prompt == 4)
                 {
                     petShelter.playPets();
                     petShelter.showPetsStatus();
+                    petShelter.tickPets();
                 }
                 else if (prompt == 5)
                 {
