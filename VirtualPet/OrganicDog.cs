@@ -16,5 +16,7 @@ namespace VirtualPet
             this.type = type;
             this.cageFilthLevel = cageFilthLevel;
         }
+        public String Type { get; set; }
+        public int CageFilthLevel { get; set; }
     }
 }

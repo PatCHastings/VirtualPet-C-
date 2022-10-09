@@ -22,7 +22,7 @@ namespace VirtualPet
             Console.WriteLine("_________Welcome to Virtual Pet!_________");
             Console.WriteLine("\nPlease enter the name of your pet: \n");
             String petName = Console.ReadLine();
-            VirtualPet pet1 = new VirtualPet(petName, 0, 0, 0);
+            VirtualPet pet1 = new OrganicCat("Organic", 0, petName, 0, 0, 0);
 
             Console.WriteLine("Nice to met you, " + petName + "! Your new master awaits.");
             bool gameOn = true;
@@ -30,7 +30,7 @@ namespace VirtualPet
             while (gameOn == true)
             {       
                 Console.WriteLine("\nNow, what would you like to do with your pet " + petName + "?\n");
-                Console.WriteLine("1: Feed it\n2: give it water\n3: Play with it\n4: new game\n5: quit");
+                Console.WriteLine("1: Feed it\n2: give it water\n3: Play with it\n4: Enter the Pet Shelter\n5: new game\n6: quit");
                 int prompt = int.Parse(Console.ReadLine());            
             
                 if (prompt == 1)
@@ -56,6 +56,10 @@ namespace VirtualPet
                 }
                 else if (prompt == 4)
                 {
+                    Console.WriteLine("Okay then, right this way");    
+                }
+                else if (prompt == 5)
+                {
                     Console.WriteLine("Are you sure? All unsaved progress will be lost..\n(enter y if yes, enter n if not)\n");
                     String promptNewGame = Console.ReadLine();
                     if (promptNewGame.Equals("y"))
@@ -72,7 +76,7 @@ namespace VirtualPet
                     }
                     
                 }
-                else if (prompt == 5)
+                else if (prompt == 6)
                 {
                     Console.WriteLine("Are you sure? All unsaved progress will be lost..\n(enter y if yes, enter n if not)\n");
                     String promptNewGame = Console.ReadLine();
@@ -95,6 +99,26 @@ namespace VirtualPet
                     continue;
                 }
             }           
+        }
+
+        public void gameLoopShelter()
+        {
+            VirtualPetShelter petShelter = new VirtualPetShelter();
+
+            Console.WriteLine("Welcome to the Pet Shelter");
+            Console.WriteLine("\nWhat would you like to do here?\n" +
+                "\n1: Add a Pet to the Shelter" +
+                "\n2: Feed pets" +
+                "\n3: Water pets" +
+                "\n4: play with pets" +          
+                "\n5: Remove a pet");
+            int prompt = int.Parse(Console.ReadLine());
+            if(prompt == 1)
+            {
+                Console.WriteLine("\nWould you like to add a Cat or a Dog?\n" +
+                    "\n1: add Cat" +
+                    "\n2: add Dog");
+            }
         }
     }
 }
