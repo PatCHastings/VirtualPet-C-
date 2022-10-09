@@ -31,11 +31,18 @@ namespace VirtualPet
                 arrayPet.feed();
             }
         }
-        internal void waterPets()
+        public void waterPets()
         {
             foreach (VirtualPet arrayPet in shelterList)
             {
                 arrayPet.water();
+            }
+        }
+        public void playPets()
+        {
+            foreach (VirtualPet arrayPet in shelterList)
+            {
+                arrayPet.play();
             }
         }
 
@@ -47,7 +54,7 @@ namespace VirtualPet
             }
         }
 
-       
+        
     }
 
 }

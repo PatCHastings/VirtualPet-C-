@@ -107,48 +107,67 @@ namespace VirtualPet
         {
             Console.WriteLine("Welcome to the Pet Shelter");
             VirtualPetShelter petShelter = new VirtualPetShelter();
+            bool quitGame = false;
 
-            Console.WriteLine("\nWhat would you like to do here?\n" +
-                "\n1: Add a Pet to the Shelter" +
-                "\n2: Feed pets" +
-                "\n3: Water pets" +
-                "\n4: play with pets" +          
-                "\n5: Remove a pet");
-            int prompt = int.Parse(Console.ReadLine());
-            if (prompt == 1)
+            while (!quitGame)
             {
-                Console.WriteLine("\nWould you like to add a Cat or a Dog?\n" +
-                    "\n1: add Cat" +
-                    "\n2: add Dog");
-                if(prompt==1)
+                Console.WriteLine("\nWhat would you like to do here?\n" +
+                    "\n1: Add a Pet to the Shelter" +
+                    "\n2: Feed pets" +
+                    "\n3: Water pets" +
+                    "\n4: play with pets" +
+                    "\n5: Remove a pet");
+                int prompt = int.Parse(Console.ReadLine());
+                if (prompt == 1)
                 {
-                    Console.WriteLine("Enter your new cat's name:");
-                    String typeName = Console.ReadLine();   
-                    VirtualPet petTypeAdded = new OrganicCat("OrganicCat", 0, typeName, 0, 0, 0);
-                    petShelter.addPetToShelter(petTypeAdded);
-                    petShelter.shelterPopulation();
-                    
+                    Console.WriteLine("\nWould you like to add a Cat or a Dog?\n" +
+                        "\n1: add Cat" +
+                        "\n2: add Dog");
+                    if (prompt == 1)
+                    {
+                        Console.WriteLine("Enter your new cat's name:");
+                        String typeName = Console.ReadLine();
+                        VirtualPet petTypeAdded = new OrganicCat("OrganicCat", 0, typeName, 0, 0, 0);
+                        petShelter.addPetToShelter(petTypeAdded);
+                        petShelter.shelterPopulation();
 
+
+
+                    }
+                    else if (prompt == 2)
+                    {
+                        Console.WriteLine("Enter your new dog's name:");
+                        String typeName = Console.ReadLine();
+                        VirtualPet petTypeAdded = new OrganicDog("OrganicDog", 0, typeName, 0, 0, 0);
+                        petShelter.addPetToShelter(petTypeAdded);
+                    }
+                    else
+                    {
+                        Console.WriteLine("I dont understand, please choose 1 or 2..");
+                        continue; 
+                    }
+                }
+                else if (prompt == 2)
+                {
+                    petShelter.feedPets();
+                    petShelter.showPetsStatus();
 
                 }
-                if(prompt==2)
+                else if (prompt == 3)
                 {
-                    Console.WriteLine("Enter your new dog's name:");
-                    String typeName = Console.ReadLine();
-                    VirtualPet petTypeAdded = new OrganicDog("OrganicDog", 0, typeName, 0, 0, 0);
-                    petShelter.addPetToShelter(petTypeAdded);
+                    petShelter.waterPets();
+                    petShelter.showPetsStatus();
                 }
-            }
-            else if (prompt == 2)
-            {
-                petShelter.feedPets();
-                petShelter.showPetsStatus();
+                else if (prompt == 4)
+                {
+                    petShelter.playPets();
+                    petShelter.showPetsStatus();
+                }
+                else if (prompt == 5)
+                {
+                    quitGame = true;
+                }
 
-            }
-            else if (prompt == 3)
-            {
-                petShelter.waterPets();
-                petShelter.showPetsStatus();
             }
         }
     }

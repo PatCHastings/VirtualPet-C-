@@ -57,7 +57,7 @@ namespace VirtualPet
 
         public void status()
         {
-            Console.WriteLine("\nHunger: " + hungerLevel + " Thirst: " + thirstLevel + " boredom: " + boredomLevel);
+            Console.WriteLine(petName + ": " + "Hunger: " + hungerLevel + " Thirst: " + thirstLevel + " boredom: " + boredomLevel);
             if (hungerLevel >= 10)
             {
                 Console.WriteLine(petName + " is about to starve! You better Feed it" +
