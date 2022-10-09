@@ -19,7 +19,35 @@ namespace VirtualPet
             shelterList.Add(petToAdd);
         }
 
+        public int shelterPopulation()
+        {
+            return shelterList.Count;
+        }
 
+        public void feedPets()
+        {
+            foreach (VirtualPet arrayPet in shelterList)
+            {
+                arrayPet.feed();
+            }
+        }
+        internal void waterPets()
+        {
+            foreach (VirtualPet arrayPet in shelterList)
+            {
+                arrayPet.water();
+            }
+        }
+
+        public void showPetsStatus()
+        {
+            foreach (VirtualPet arrayPet in shelterList)
+            {
+                arrayPet.status();
+            }
+        }
+
+       
     }
 
 }

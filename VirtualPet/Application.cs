@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -56,7 +57,8 @@ namespace VirtualPet
                 }
                 else if (prompt == 4)
                 {
-                    Console.WriteLine("Okay then, right this way");    
+                    Console.WriteLine("Okay then, right this way");  
+                    gameLoopShelter();
                 }
                 else if (prompt == 5)
                 {
@@ -103,9 +105,9 @@ namespace VirtualPet
 
         public void gameLoopShelter()
         {
+            Console.WriteLine("Welcome to the Pet Shelter");
             VirtualPetShelter petShelter = new VirtualPetShelter();
 
-            Console.WriteLine("Welcome to the Pet Shelter");
             Console.WriteLine("\nWhat would you like to do here?\n" +
                 "\n1: Add a Pet to the Shelter" +
                 "\n2: Feed pets" +
@@ -113,11 +115,40 @@ namespace VirtualPet
                 "\n4: play with pets" +          
                 "\n5: Remove a pet");
             int prompt = int.Parse(Console.ReadLine());
-            if(prompt == 1)
+            if (prompt == 1)
             {
                 Console.WriteLine("\nWould you like to add a Cat or a Dog?\n" +
                     "\n1: add Cat" +
                     "\n2: add Dog");
+                if(prompt==1)
+                {
+                    Console.WriteLine("Enter your new cat's name:");
+                    String typeName = Console.ReadLine();   
+                    VirtualPet petTypeAdded = new OrganicCat("OrganicCat", 0, typeName, 0, 0, 0);
+                    petShelter.addPetToShelter(petTypeAdded);
+                    petShelter.shelterPopulation();
+                    
+
+
+                }
+                if(prompt==2)
+                {
+                    Console.WriteLine("Enter your new dog's name:");
+                    String typeName = Console.ReadLine();
+                    VirtualPet petTypeAdded = new OrganicDog("OrganicDog", 0, typeName, 0, 0, 0);
+                    petShelter.addPetToShelter(petTypeAdded);
+                }
+            }
+            else if (prompt == 2)
+            {
+                petShelter.feedPets();
+                petShelter.showPetsStatus();
+
+            }
+            else if (prompt == 3)
+            {
+                petShelter.waterPets();
+                petShelter.showPetsStatus();
             }
         }
     }
