@@ -131,9 +131,6 @@ namespace VirtualPet
                         VirtualPet petTypeAdded = new OrganicCat("OrganicCat", 0, typeName, 0, 0, 0);
                         petShelter.addPetToShelter(petTypeAdded);
                         petShelter.shelterPopulation();
-
-
-
                     }
                     else if(promptNested==2)
                     {
@@ -153,7 +150,6 @@ namespace VirtualPet
                     petShelter.feedPets();
                     petShelter.showPetsStatus();
                     petShelter.tickPets();
-
                 }
                 else if (prompt == 3)
                 {
@@ -171,7 +167,6 @@ namespace VirtualPet
                 {
                     quitGame = true;
                 }
-
             }
         }
     }

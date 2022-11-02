@@ -9,12 +9,11 @@ namespace VirtualPet
     public abstract class OrganicPet : VirtualPet
     {
 
-        protected String type;
-
-        protected OrganicPet(string type, string petName, int hungerLevel, int thirstLevel, int boredomLevel) : base(petName, hungerLevel, thirstLevel, boredomLevel)
+        protected OrganicPet(String name, int hungerLevel, int thirstLevel, int boredomLevel) 
+            : base(name, "Organic", hungerLevel, thirstLevel, boredomLevel)
         {
-            this.type = type;   
+            
+              
         }
-        public String Type { get; set; }
     }
 }

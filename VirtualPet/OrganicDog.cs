@@ -11,7 +11,7 @@ namespace VirtualPet
         protected String type;
         protected int cageFilthLevel;
 
-        public OrganicDog(string type, int cageFilthLevel, string petName, int hungerLevel, int thirstLevel, int boredomLevel) : base(petName, hungerLevel, thirstLevel, boredomLevel)
+        public OrganicDog(string type, int cageFilthLevel, string petName, int hungerLevel, int thirstLevel, int boredomLevel) : base(name, "OrganicDog")
         {
             this.type = type;
             this.cageFilthLevel = cageFilthLevel;

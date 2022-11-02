@@ -10,7 +10,7 @@ namespace VirtualPet
 {
     public class VirtualPetShelter
     {
-        protected List<VirtualPet> shelterList = new List<VirtualPet>();
+        protected List<VirtualPet> shelterList = new List<VirtualPet>(); 
         public List<VirtualPet> ShelterList { get; set; }   
         
 
@@ -59,9 +59,7 @@ namespace VirtualPet
             {
                 arrayPet.Tick();
             }
-        }
-
+        }     
         
     }
-
 }

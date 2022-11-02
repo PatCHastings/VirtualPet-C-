@@ -5,19 +5,28 @@ namespace VirtualPet
     public abstract class VirtualPet
     {
         protected String petName;
+        protected String petType;
         protected int hungerLevel;
         protected int thirstLevel;
         protected int boredomLevel;
+        protected int healthBar; 
+        protected int attackPower;
+        protected int defense;
 
-        public VirtualPet(string petName, int hungerLevel, int thirstLevel, int boredomLevel)
+        public VirtualPet(String name, String type, int hungerLevel, int thirstLevel, int boredomLevel, int healthBar, int attackPower, int defense)
         {
-            this.petName = petName;
+            this.petName = name;
+            this.petType = type;
             this.hungerLevel = hungerLevel;
             this.thirstLevel = thirstLevel;
             this.boredomLevel = boredomLevel;
+            this.healthBar = healthBar;
+            this.attackPower = attackPower;
+            this.defense = defense;
         }
         
-        public String PetName { get; set; }
+        public String Name { get; set; }
+        public String Type { get; set; }
         public int HungerLevel { get; set; }
         public int ThirstLevel { get; set; }
         public int BoredomLevel { get; set; }
