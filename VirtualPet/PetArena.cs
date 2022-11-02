@@ -7,37 +7,44 @@ using System.Threading.Tasks;
 
 namespace VirtualPet
 {
-    public class PetArena 
+    public class PetArena
     {
-        protected ArrayList<VirtualPet> combatants = new ArrayList<VirtualPet>(); 
-    }
-        public ArrayList<VirtualPet> Combatants { get; set; }
-    //public PetArena()
-    //{
-    //}
+        protected List<VirtualPet> combatants = new List<VirtualPet>();
+
+        public List<VirtualPet> Combatants { get; set; }
 
 
+        //public PetArena()
+        //{
+        //}
 
-    public void addCombatantToArena(VirtualPet addCombatant)
-    {
-        combatants.Add(addCombatant);
-    }
-
-    public void defeatedPet(string remove)
-    {
-        foreach (VirtualPet arrayCombatant in combatants)
+        public int arenaPopulation()
         {
-
+            return combatants.Count;
         }
-    }
 
-    public void attackDogs()
-    {
-        foreach (VirtualPet arrayCombatants in combatants)
+        public void addCombatantToArena(VirtualPet addCombatant)
         {
-            if (arrayCombatants.Type.Equals("OrganicCat"))
+            combatants.Add(addCombatant);
+        }
+
+        public void defeatedPet(string remove)
+        {
+            foreach (VirtualPet arrayCombatant in combatants)
             {
-                Console.WriteLine("wtf");
+
+            }
+        }
+
+        public void attackDogs()
+        {
+            foreach (VirtualPet arrayCombatants in combatants)
+            {
+                if (arrayCombatants.Type.Equals("OrganicCat"))
+                {
+                    Console.WriteLine("wtf");
+
+                }
             }
         }
     }

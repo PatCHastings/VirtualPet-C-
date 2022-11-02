@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace VirtualPet
 {
     public class VirtualPetShelter
@@ -60,6 +59,16 @@ namespace VirtualPet
                 arrayPet.Tick();
             }
         }     
-        
+        public void removePet()
+        {
+            foreach (VirtualPet arrayPet in shelterList)
+                string name = arrayPet.Name();
+            {
+                if ()
+                {
+
+                }
+            }
+        }
     }
 }

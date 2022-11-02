@@ -11,7 +11,7 @@ namespace VirtualPet
         
         protected int litterboxFilthLevel;
 
-        public OrganicCat(int litterboxFilthLevel, String petName, int hungerLevel, int thirstLevel, int boredomLevel) 
+        public OrganicCat(string type, int litterboxFilthLevel, String petName, int hungerLevel, int thirstLevel, int boredomLevel) 
             : base(name, "OrganicCat")
         {
             

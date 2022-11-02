@@ -85,12 +85,12 @@ namespace VirtualPet
                 Console.WriteLine("RIP: " + petName + " died of starvation..");
                 VirtualPet.gameOver();
             }
-            if (hungerLevel > 12)
+            if (thirstLevel > 12)
             {
                 Console.WriteLine("I am sorry, " + petName + " died of dehydration..");
                 VirtualPet.gameOver();
             }
-            if (hungerLevel > 12)
+            if (boredomLevel > 12)
             {
                 Console.WriteLine("uh oh, " + petName + " ran away and found a better master..");
                 VirtualPet.gameOver();

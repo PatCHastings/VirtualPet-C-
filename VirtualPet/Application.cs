@@ -107,6 +107,7 @@ namespace VirtualPet
         {
             Console.WriteLine("Welcome to the Pet Shelter");
             VirtualPetShelter petShelter = new VirtualPetShelter();
+            PetArena petArena = new PetArena();
             bool quitGame = false;
 
             while (!quitGame)
@@ -116,7 +117,9 @@ namespace VirtualPet
                     "\n2: Feed pets" +
                     "\n3: Water pets" +
                     "\n4: play with pets" +
-                    "\n5: Remove a pet");
+                    "\n5: Remove a pet" +
+                    "\n6: Enter the Arena!" +
+                    "\n7: go back");
                 int prompt = int.Parse(Console.ReadLine());
                 if (prompt == 1)
                 {
@@ -147,7 +150,7 @@ namespace VirtualPet
                 }
                 else if (prompt == 2)
                 {
-                    petShelter.feedPets();
+                    petShelter.feedPets();                
                     petShelter.showPetsStatus();
                     petShelter.tickPets();
                 }
@@ -164,6 +167,16 @@ namespace VirtualPet
                     petShelter.tickPets();
                 }
                 else if (prompt == 5)
+                {
+                    Console.WriteLine("Please type the name of the pet you wish to get rid of: ");
+                    String name = Console.ReadLine();
+                    petShelter.removePet(name);
+                }
+                else if (prompt == 6)
+                {
+                    gameLoopArena();
+                }
+                else if (prompt == 7)
                 {
                     quitGame = true;
                 }

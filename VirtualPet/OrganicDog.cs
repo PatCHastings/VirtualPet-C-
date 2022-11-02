@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace VirtualPet
-{
+{   
     public class OrganicDog : VirtualPet
     {
         protected String type;
