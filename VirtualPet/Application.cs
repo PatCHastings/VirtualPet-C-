@@ -169,8 +169,10 @@ namespace VirtualPet
                 else if (prompt == 5)
                 {
                     Console.WriteLine("Please type the name of the pet you wish to get rid of: ");
-                    String name = Console.ReadLine();
-                    petShelter.removePet(name);
+                    petShelter.removePet();
+                    petShelter.showPetsStatus();
+                    petShelter.tickPets();
+
                 }
                 else if (prompt == 6)
                 {
@@ -181,6 +183,13 @@ namespace VirtualPet
                     quitGame = true;
                 }
             }
+        }
+
+        public void gameLoopArena()
+        {
+
+            Console.WriteLine("Welcome to the Pet Arena!! Where you get to pit your pets against one another in a harmless game of mortal combat!");
+            PetArena petArena = new PetArena();
         }
     }
 }

@@ -13,9 +13,9 @@ namespace VirtualPet
         protected int attackPower;
         protected int defense;
 
-        public VirtualPet(String name, String type, int hungerLevel, int thirstLevel, int boredomLevel, int healthBar, int attackPower, int defense)
+        public VirtualPet(String _name, String type, int hungerLevel, int thirstLevel, int boredomLevel, int healthBar, int attackPower, int defense)
         {
-            this.petName = name;
+            this.petName = _name;
             this.petType = type;
             this.hungerLevel = hungerLevel;
             this.thirstLevel = thirstLevel;
@@ -25,7 +25,17 @@ namespace VirtualPet
             this.defense = defense;
         }
         
-        public String Name { get; set; }
+        public String Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                Name = value;
+            }
+        }
         public String Type { get; set; }
         public int HungerLevel { get; set; }
         public int ThirstLevel { get; set; }

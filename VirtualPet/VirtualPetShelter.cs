@@ -17,6 +17,23 @@ namespace VirtualPet
         {
             shelterList.Add(petToAdd);
         }
+        public void removePet(String remove)
+        {
+            string namePrompt = Console.Readline();
+            foreach (VirtualPet arrayPet in shelterList)
+                string namePrompt = arrayPet.Name();
+            {
+                if (ShelterList.Contains(namePrompt))
+                {
+                    shelterList.arrayPet(remove);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("pet not found..");
+                }
+            }
+        }
 
         public int shelterPopulation()
         {
@@ -59,16 +76,5 @@ namespace VirtualPet
                 arrayPet.Tick();
             }
         }     
-        public void removePet()
-        {
-            foreach (VirtualPet arrayPet in shelterList)
-                string name = arrayPet.Name();
-            {
-                if ()
-                {
-
-                }
-            }
-        }
     }
 }
