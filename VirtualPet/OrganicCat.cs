@@ -11,16 +11,13 @@ namespace VirtualPet
         
         protected int litterboxFilthLevel;
 
-        public OrganicCat(string type, int litterboxFilthLevel, String petName, int hungerLevel, int thirstLevel, int boredomLevel) 
-            : base(name, "OrganicCat")
+        public OrganicCat(String name, string type, int litterboxFilthLevel, String petName, int hungerLevel, int thirstLevel, int boredomLevel) 
+            : base("Cat","OrganicCat")
         {
             
 
             this.litterboxFilthLevel = litterboxFilthLevel;
-            this.healthBar = healthBar;
-            this.attackPower = attackPower;
-            this.defense = defense;
-            
+            this.type = type;
 
         }
         public String PetType { get; set; }

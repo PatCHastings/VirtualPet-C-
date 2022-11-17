@@ -10,7 +10,7 @@ namespace VirtualPet
     {
 
         protected OrganicPet(String name, int hungerLevel, int thirstLevel, int boredomLevel) 
-            : base(name, "Organic", hungerLevel, thirstLevel, boredomLevel)
+            : base(name, "Organic")
         {
             
               

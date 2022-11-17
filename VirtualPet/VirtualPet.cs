@@ -4,8 +4,8 @@ namespace VirtualPet
 {
     public abstract class VirtualPet
     {
-        protected String petName;
-        protected String petType;
+        protected String name;
+        protected String type;
         protected int hungerLevel;
         protected int thirstLevel;
         protected int boredomLevel;
@@ -13,29 +13,13 @@ namespace VirtualPet
         protected int attackPower;
         protected int defense;
 
-        public VirtualPet(String _name, String type, int hungerLevel, int thirstLevel, int boredomLevel, int healthBar, int attackPower, int defense)
+        public VirtualPet(String name, String type)
         {
-            this.petName = _name;
-            this.petType = type;
-            this.hungerLevel = hungerLevel;
-            this.thirstLevel = thirstLevel;
-            this.boredomLevel = boredomLevel;
-            this.healthBar = healthBar;
-            this.attackPower = attackPower;
-            this.defense = defense;
+            this.name = name;
+            this.type = type;
         }
         
-        public String Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                Name = value;
-            }
-        }
+        public String Name { get; set; }
         public String Type { get; set; }
         public int HungerLevel { get; set; }
         public int ThirstLevel { get; set; }
@@ -76,33 +60,33 @@ namespace VirtualPet
 
         public void status()
         {
-            Console.WriteLine(petName + ": " + "Hunger: " + hungerLevel + " Thirst: " + thirstLevel + " boredom: " + boredomLevel);
+            Console.WriteLine(name + ": " + "Hunger: " + hungerLevel + " Thirst: " + thirstLevel + " boredom: " + boredomLevel);
             if (hungerLevel >= 10)
             {
-                Console.WriteLine(petName + " is about to starve! You better Feed it" +
+                Console.WriteLine(name + " is about to starve! You better Feed it" +
                     "!");
             }
             if (thirstLevel >= 10)
             {
-                Console.WriteLine(petName + " is about to dehydrate! get it some water!");
+                Console.WriteLine(name + " is about to dehydrate! get it some water!");
             }
             if (boredomLevel >= 10)
             {
-                Console.WriteLine(petName + " is about to run away! You better play with it!");
+                Console.WriteLine(name + " is about to run away! You better play with it!");
             }
             if(hungerLevel > 12)
             {
-                Console.WriteLine("RIP: " + petName + " died of starvation..");
+                Console.WriteLine("RIP: " + name + " died of starvation..");
                 VirtualPet.gameOver();
             }
             if (thirstLevel > 12)
             {
-                Console.WriteLine("I am sorry, " + petName + " died of dehydration..");
+                Console.WriteLine("I am sorry, " + name + " died of dehydration..");
                 VirtualPet.gameOver();
             }
             if (boredomLevel > 12)
             {
-                Console.WriteLine("uh oh, " + petName + " ran away and found a better master..");
+                Console.WriteLine("uh oh, " + name + " ran away and found a better master..");
                 VirtualPet.gameOver();
             }
 

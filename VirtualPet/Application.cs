@@ -23,7 +23,7 @@ namespace VirtualPet
             Console.WriteLine("_________Welcome to Virtual Pet!_________");
             Console.WriteLine("\nPlease enter the name of your pet: \n");
             String petName = Console.ReadLine();
-            VirtualPet pet1 = new OrganicCat("Organic", 0, petName, 0, 0, 0);
+            VirtualPet pet1 = new OrganicCat("cat", "OrganicCat", 0, "cat", 0, 0, 0);
 
             Console.WriteLine("Nice to met you, " + petName + "! Your new master awaits.");
             bool gameOn = true;
@@ -131,7 +131,7 @@ namespace VirtualPet
                     {
                         Console.WriteLine("Enter your new cat's name:");
                         String typeName = Console.ReadLine();
-                        VirtualPet petTypeAdded = new OrganicCat("OrganicCat", 0, typeName, 0, 0, 0);
+                        VirtualPet petTypeAdded = new OrganicCat("cat", "OrganicCat", 0, "cat", 0, 0, 0);
                         petShelter.addPetToShelter(petTypeAdded);
                         petShelter.shelterPopulation();
                     }
@@ -190,6 +190,25 @@ namespace VirtualPet
 
             Console.WriteLine("Welcome to the Pet Arena!! Where you get to pit your pets against one another in a harmless game of mortal combat!");
             PetArena petArena = new PetArena();
+            VirtualPetShelter petShelter = new VirtualPetShelter();
+            bool quitGame = false;
+            while (!quitGame)
+            {
+                Console.WriteLine("Ladies and Gentlemen; This is the main event! Prepare For Battle!!");
+                Console.WriteLine("Make your choice: " +
+                    "\n1: Check arena combatants" +
+                    "\n2: Add a new combatant" +
+                    "\n3: 1 on 1 battle" + 
+                    "\n4: go back to shelter");
+                int prompt = int.Parse(Console.ReadLine());
+                if (prompt == 1)
+                {
+                    petArena.arenaPopulation();
+                    petShelter.showPetsStatus();
+                }
+
+
+            }
         }
     }
 }

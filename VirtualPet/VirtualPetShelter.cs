@@ -17,15 +17,14 @@ namespace VirtualPet
         {
             shelterList.Add(petToAdd);
         }
-        public void removePet(String remove)
+        public void removePet()
         {
-            string namePrompt = Console.Readline();
-            foreach (VirtualPet arrayPet in shelterList)
-                string namePrompt = arrayPet.Name();
+            String namePrompt = Console.ReadLine();
+            foreach (VirtualPet arrayPet in shelterList)      
             {
-                if (ShelterList.Contains(namePrompt))
+                if (arrayPet.Equals(namePrompt))
                 {
-                    shelterList.arrayPet(remove);
+                    shelterList.Remove(arrayPet);
                     break;
                 }
                 else
@@ -34,6 +33,8 @@ namespace VirtualPet
                 }
             }
         }
+        //do a method that removes from List, then call that in removePet
+
 
         public int shelterPopulation()
         {
